@@ -15,7 +15,7 @@ public class studentAdmissionSystem extends customExe{
      sc.close();     
 }
 }
-
+//Invalid Exception class
 class InvalidAgeException extends Exception{
     InvalidAgeException(String message){
         super(message);
