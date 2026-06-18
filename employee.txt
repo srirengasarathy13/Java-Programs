@@ -1,0 +1,4 @@
+Employee Id   : 101
+Employee Name : Sri
+Designation   : Software Engineer
+Salary        : Rs. 50000
