@@ -4,7 +4,7 @@ import java.io.FileReader;
 public class fileHandling {
   public static void main(String[] args) {
     try{
-       FileWriter fw = new FileWriter("employee.txt");
+       FileWriter fw = new FileWriter("FileHandling/employee.txt");
        fw.write("Employee Id   : 101\nEmployee Name : Sri\nDesignation   : Software Engineer\nSalary        : Rs. 50000");
        fw.close();
 
