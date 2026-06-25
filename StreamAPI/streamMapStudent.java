@@ -1,6 +1,6 @@
 package StreamAPI;
 import java.util.*;;
-public class mapStreamStudent {
+public class streamMapStudent {
     public static void main(String[] args) {
         ArrayList<Integer> marks = new ArrayList<>();
         marks.add(90);

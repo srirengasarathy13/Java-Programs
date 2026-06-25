@@ -1,6 +1,6 @@
 package StreamAPI;
 import java. util.*;;
-public class mapStream {
+public class streamMap {
  
     public static void main(String[] args) {
         ArrayList<Integer> salaries = new ArrayList<>();
