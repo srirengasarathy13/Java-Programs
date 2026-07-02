@@ -30,5 +30,6 @@ public class deleteEmployee {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        sc.close();
     }
 }
