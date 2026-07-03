@@ -1,8 +1,5 @@
 import java.sql.*;
 import java.util.*;
-/**
- * editEmployee
- */
 public class editEmployee {
 public static void main(String[] args) {
     
