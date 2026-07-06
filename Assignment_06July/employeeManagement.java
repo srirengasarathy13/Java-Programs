@@ -14,7 +14,7 @@ public class employeeManagement {
             String sql = "INSERT INTO employee(empId, empName, salary) VALUES(?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(sql);
             
-            System.out.print("Enter Employee ID:");
+            System.out.print("Enter Employee ID: ");
             int id = sc.nextInt();
 
             System.out.print("Enter Employee Name: ");
