@@ -16,6 +16,10 @@ public class employeeManagement {
             
             System.out.print("Enter Employee ID: ");
             int id = sc.nextInt();
+            if(id<=0) {
+                System.out.println("Invalid Employee ID!");
+                return;
+            }
 
             System.out.print("Enter Employee Name: ");
             sc.nextLine();
@@ -23,6 +27,10 @@ public class employeeManagement {
 
             System.out.print("Enter Salary: ");
             double salary = sc.nextDouble();
+            if(salary < 0) {
+                System.out.println("Salary cannot be negative!");
+                return;
+            }
             
             ps.setInt(1, id);
             ps.setString(2, name);
