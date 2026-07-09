@@ -86,9 +86,14 @@ public class employeeManagement {
 
             System.out.print("Enter Employee ID: ");
             int id = sc.nextInt();
+            sc.nextLine(); 
 
             System.out.print("Enter New Salary: ");
             double salary = sc.nextDouble();
+            if(salary < 0) {
+                System.out.println("Salary cannot be negative!");
+                return;
+            }
 
             ps.setDouble(1, salary);
             ps.setInt(2, id);
