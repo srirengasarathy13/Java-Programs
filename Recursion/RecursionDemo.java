@@ -15,5 +15,6 @@ public class RecursionDemo {
         System.out.print("Enter the number of employees : ");
         int n = sc.nextInt();
         display(n);
+        sc.close();
     }
 }
