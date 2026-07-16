@@ -38,8 +38,7 @@ class Developer extends Emp1{
     String programmingLanguage;
     Developer(int id, String name, double salary, String programmingLanguage){
         super(id, name, salary);
-        this.programmingLanguage = programmingLanguage;
-        
+        this.programmingLanguage = programmingLanguage;       
     }
 
     @Override
