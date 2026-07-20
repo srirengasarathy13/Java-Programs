@@ -1,3 +1,14 @@
 {
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        ".",
+        "ArrayList",
+        "Assignment_11June",
+        "Assignment_15June",
+        "JDBC_Connected",
+        "Task1_LibraryManagementSystem"
+    ],
+    "java.project.referencedLibraries": [
+        "FinalEvaluation_EmployeePayrollSystem\\lib\\mysql-connector-j-9.7.0.jar"
+    ]
 }
