@@ -14,7 +14,6 @@ import java.io.IOException;
 
 public class EmployeeDAO {
 
-    // Register Employee
     public void registerEmployee(Employee emp) {
 
         String sql = "INSERT INTO employee VALUES (?, ?, ?, ?, ?)";
@@ -49,7 +48,6 @@ public class EmployeeDAO {
         }
     }
 
-    // View All Employees
     public void viewEmployees() {
 
         String sql = "SELECT * FROM employee";
@@ -58,10 +56,10 @@ public class EmployeeDAO {
              Statement st = con.createStatement();
              ResultSet rs = st.executeQuery(sql)) {
 
-            System.out.println("\n==============================================================");
+            System.out.println("\n===========================================================================");
             System.out.printf("%-8s %-20s %-15s %-15s %-10s%n",
                     "ID", "NAME", "DEPARTMENT", "DESIGNATION", "SALARY");
-            System.out.println("==============================================================");
+            System.out.println("===========================================================================");
 
             boolean found = false;
 
@@ -69,7 +67,7 @@ public class EmployeeDAO {
 
                 found = true;
 
-                System.out.printf("%-8d %-20s %-15s %-15s %-10.2f%n",
+                System.out.printf("%-8d %-20s %-15s %-15s Rs.%-10.2f%n",
                         rs.getInt("empid"),
                         rs.getString("empname"),
                         rs.getString("department"),
@@ -93,7 +91,6 @@ public class EmployeeDAO {
         }
     }
 
-    // Search Employee by ID
     public void searchEmployee(int empId) {
 
         String sql = "SELECT * FROM employee WHERE empid = ?";
@@ -133,7 +130,6 @@ public class EmployeeDAO {
     }
 
 
-    // Update Employee Salary
     public void updateSalary(int empId, double newSalary) {
 
         String sql = "UPDATE employee SET salary = ? WHERE empid = ?";
@@ -168,7 +164,6 @@ public class EmployeeDAO {
     }
 
 
-    // Delete Employee
     public void deleteEmployee(int empId) {
 
         String sql = "DELETE FROM employee WHERE empid = ?";
@@ -201,7 +196,6 @@ public class EmployeeDAO {
         }
     }
 
-        // Load Employees into ArrayList
     public ArrayList<Employee> getEmployees() {
 
         ArrayList<Employee> employeeList = new ArrayList<>();
@@ -239,7 +233,6 @@ public class EmployeeDAO {
     }
 
 
-    // Sort Employees by Name (Comparable)
     public void sortByName() {
 
         ArrayList<Employee> employeeList = getEmployees();
@@ -266,7 +259,6 @@ public class EmployeeDAO {
     }
 
 
-    // Sort Employees by Salary (Descending)
     public void sortBySalary() {
 
         ArrayList<Employee> employeeList = getEmployees();
@@ -293,7 +285,6 @@ public class EmployeeDAO {
     }
 
 
-    // Export Employee Details to File
     public void exportToFile() {
 
         ArrayList<Employee> employeeList = getEmployees();
@@ -307,9 +298,9 @@ public class EmployeeDAO {
 
         try (FileWriter fw = new FileWriter("employee.txt")) {
 
-            fw.write("============================================================\n");
-            fw.write("Employee Payroll Report\n");
-            fw.write("============================================================\n");
+            fw.write("===============================================================================\n");
+            fw.write("                         Employee Payroll Report\n");
+            fw.write("===============================================================================\n");
 
             fw.write(String.format("%-8s %-20s %-15s %-15s %-10s%n",
                     "ID", "NAME", "DEPARTMENT", "DESIGNATION", "SALARY"));

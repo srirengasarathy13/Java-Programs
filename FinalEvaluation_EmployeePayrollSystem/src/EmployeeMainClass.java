@@ -13,7 +13,7 @@ public class EmployeeMainClass{
         do {
 
             System.out.println("\n==================================");
-            System.out.println(" EMPLOYEE PAYROLL SYSTEM");
+            System.out.println("     EMPLOYEE PAYROLL SYSTEM");
             System.out.println("==================================");
             System.out.println("1. Register Employee");
             System.out.println("2. View All Employees");
@@ -28,7 +28,7 @@ public class EmployeeMainClass{
 
             try {
                 choice = sc.nextInt();
-                sc.nextLine(); // consume newline
+                sc.nextLine(); 
             } catch (InputMismatchException e) {
                 System.out.println("Invalid Menu Choice!");
                 sc.nextLine();

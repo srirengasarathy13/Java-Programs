@@ -1,18 +1,16 @@
 public class Employee implements Comparable<Employee> {
 
-    // Private Data Members (Encapsulation)
     private int empId;
     private String empName;
     private String department;
     private String designation;
     private double salary;
 
-    // Default Constructor
+
     public Employee() {
 
     }
 
-    // Parameterized Constructor
     public Employee(int empId, String empName, String department,
                     String designation, double salary) {
 
@@ -23,7 +21,6 @@ public class Employee implements Comparable<Employee> {
         this.salary = salary;
     }
 
-    // Getter Methods
     public int getEmpId() {
         return empId;
     }
@@ -44,7 +41,7 @@ public class Employee implements Comparable<Employee> {
         return salary;
     }
 
-    // Setter Methods
+ 
     public void setEmpId(int empId) {
         this.empId = empId;
     }
@@ -65,13 +62,11 @@ public class Employee implements Comparable<Employee> {
         this.salary = salary;
     }
 
-    // Comparable - Sort by Employee Name (Ascending)
     @Override
     public int compareTo(Employee other) {
         return this.empName.compareToIgnoreCase(other.empName);
     }
 
-    // Display Employee Details
     @Override
     public String toString() {
 
