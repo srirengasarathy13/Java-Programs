@@ -23,7 +23,8 @@ public class EmployeeMainClass{
             System.out.println("6. Sort by Name");
             System.out.println("7. Sort by Salary");
             System.out.println("8. Export to File");
-            System.out.println("9. Exit");
+            System.out.println("9. Filter by Salary");           
+            System.out.println("10. Exit");
             System.out.print("Enter your choice : ");
 
             try {
@@ -177,10 +178,17 @@ public class EmployeeMainClass{
 
                 case 9:
 
+                   System.out.println("Enter Salary Limit to filter : ");
+                   int salLimit = sc.nextInt();
+                    dao.filterBySalary(salLimit);
+
+                    break;
+                
+                case 10: 
+
                     System.out.println("Thank You!");
                     System.out.println("Exiting Employee Payroll System...");
 
-                    break;
 
                 default:
 
@@ -188,7 +196,7 @@ public class EmployeeMainClass{
 
             }
 
-        } while (choice != 9);
+        } while (choice != 10);
 
         sc.close();
     }
