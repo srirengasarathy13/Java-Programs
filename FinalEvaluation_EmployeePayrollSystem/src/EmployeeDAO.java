@@ -284,6 +284,48 @@ public class EmployeeDAO {
         }
     }
 
+    public void filterBySalary(int salLimit) {
+
+        String sql = "SELECT * FROM employee WHERE salary>="+salLimit;
+
+        try (Connection con = DBConnection.getConnection();
+             Statement st = con.createStatement();
+             ResultSet rs = st.executeQuery(sql)) {
+
+            System.out.println("\n===========================================================================");
+            System.out.printf("%-8s %-20s %-15s %-15s %-10s%n",
+                    "ID", "NAME", "DEPARTMENT", "DESIGNATION", "SALARY");
+            System.out.println("===========================================================================");
+
+            boolean found = false;
+
+            while (rs.next()) {
+               
+                found = true;
+
+                System.out.printf("%-8d %-20s %-15s %-15s Rs.%-10.2f%n",
+                        rs.getInt("empid"),
+                        rs.getString("empname"),
+                        rs.getString("department"),
+                        rs.getString("designation"),
+                        rs.getDouble("salary"));
+
+            }
+
+            if (!found) {
+                System.out.println("No Employee Records Found.");
+            }
+
+        } catch (SQLException e) {
+
+            System.out.println("Database Error : " + e.getMessage());
+
+        } catch (Exception e) {
+
+            System.out.println("Error : " + e.getMessage());
+
+        }
+    }
 
     public void exportToFile() {
 
