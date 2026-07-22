@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "productExceptIndex",
+            "request": "launch",
+            "mainClass": "YuvarajTasks.productExceptIndex",
+            "projectName": "Java-Programs_161464a1"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
