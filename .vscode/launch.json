@@ -9,6 +9,13 @@
             "name": "SystemInRead",
             "request": "launch",
             "mainClass": "LearntFromYt.SystemInRead",
+            "projectName": "Java Programs_a435cf27"
+        },
+        {
+            "type": "java",
+            "name": "SystemInRead",
+            "request": "launch",
+            "mainClass": "LearntFromYt.SystemInRead",
             "projectName": "Java-Programs_161464a1"
         },
         {
