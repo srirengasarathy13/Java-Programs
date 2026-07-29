@@ -14,5 +14,6 @@ public class SystemInRead {
         BufferedReader bf = new BufferedReader(in);
         int num = Integer.parseInt(bf.readLine());
         System.out.println(num);
+        bf.close(); // good practise
     }
 }
