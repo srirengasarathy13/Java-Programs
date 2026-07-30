@@ -1,4 +1,4 @@
-package Self_Learnt.TryCatchFinally;
+package TryCatchFinally;
 
 import java.io.BufferedReader;
 import java.io.IOException;

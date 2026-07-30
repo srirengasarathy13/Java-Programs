@@ -1,4 +1,4 @@
-package Self_Learnt.TryCatchFinally;
+package TryCatchFinally;
 
 public class TryCatchFinally {
     public static void main(String[] args) {
