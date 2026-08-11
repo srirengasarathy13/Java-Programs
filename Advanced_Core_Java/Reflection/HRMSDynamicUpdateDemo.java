@@ -33,44 +33,42 @@ public class HRMSDynamicUpdateDemo {
 
         System.out.println("HRMS Employee Processing");
 
-        // Find department field
+      
         Field departmentField =
                 Employeee.class.getDeclaredField("department");
 
         departmentField.setAccessible(true);
 
-        // Read original department
         System.out.println("Original Department : "
                 + departmentField.get(employee));
 
-        // Update department
         departmentField.set(employee, "Finance");
 
         System.out.println("Updated Department  : "
                 + departmentField.get(employee));
 
-        // Find displayEmployee() dynamically
+       
         Method displayMethod =
                 Employeee.class.getDeclaredMethod("displayEmployee");
 
-        // Invoke displayEmployee()
+        
         System.out.println("\nInvoking displayEmployee()...");
         displayMethod.invoke(employee);
 
-        // Find updateDesignation(String)
+       
         Method designationMethod =
                 Employeee.class.getDeclaredMethod(
                         "updateDesignation",
                         String.class
                 );
 
-        // Invoke updateDesignation()
+        
         designationMethod.invoke(
                 employee,
                 "Senior Consultant"
         );
 
-        // Final details
+      
         System.out.println("\nFinal Employee Details:");
         displayMethod.invoke(employee);
     }
