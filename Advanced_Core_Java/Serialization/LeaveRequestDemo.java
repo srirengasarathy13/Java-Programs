@@ -46,7 +46,7 @@ public class LeaveRequestDemo {
                 "Approved"
         );
 
-        // Serialization
+        
         ObjectOutputStream out =
                 new ObjectOutputStream(
                         new FileOutputStream("C:\\Sri\\Java Programs\\Advanced_Core_Java\\Serialization\\leaveRequest.ser"));
@@ -56,7 +56,7 @@ public class LeaveRequestDemo {
 
         System.out.println("Leave request serialized successfully.");
 
-        // Deserialization
+        
         ObjectInputStream in =
                 new ObjectInputStream(
                         new FileInputStream("C:\\Sri\\Java Programs\\Advanced_Core_Java\\Serialization\\leaveRequest.ser"));
