@@ -6,7 +6,7 @@ class EmployeeSerialization implements Serializable {
     private String employeeId;
     private String employeeName;
     private String department;
-    private double salary;
+    private transient double salary;
 
     EmployeeSerialization(String employeeId, String employeeName,
                            String department, double salary) {
@@ -38,7 +38,7 @@ public class EmployeeSerializationDemo {
 
         ObjectOutputStream output =
                 new ObjectOutputStream(
-                        new FileOutputStream("employee.ser")
+                        new FileOutputStream("C:\\Sri\\Java Programs\\Advanced_Core_Java\\Serialization\\employee.ser")
                 );
 
         output.writeObject(employee);

@@ -7,7 +7,7 @@ public class EmployeeDeserializationDemo {
 
         ObjectInputStream input =
                 new ObjectInputStream(
-                        new FileInputStream("employee.ser")
+                        new FileInputStream("C:\\Sri\\Java Programs\\Advanced_Core_Java\\Serialization\\employee.ser")
                 );
 
         EmployeeSerialization employee =
