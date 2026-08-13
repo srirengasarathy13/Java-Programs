@@ -14,7 +14,7 @@ public class LeaveRequestDemo {
         private String employeeName;
         private String leaveType;
         private int noOfDays;
-        private String status;
+        private transient String status;
 
        public LeaveRequest( int requestId, int employeeId, String employeeName, String leaveType, int noOfDays,String status){
             this.requestId = requestId;
