@@ -1,4 +1,4 @@
-package Networking;
+package Networking.ServerClientChat;
 
 import java.io.*;
 import java.net.*;
