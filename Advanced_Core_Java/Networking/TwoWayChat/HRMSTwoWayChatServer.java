@@ -32,50 +32,54 @@ public class HRMSTwoWayChatServer {
 
         // Receive messages from Employee
         Thread receiveThread = new Thread(() -> {
-
             try {
                 String message;
-
                 while ((message = input.readLine()) != null) {
-
                     if (message.equalsIgnoreCase("exit")) {
-                        System.out.println("\nEmployee disconnected.");
+                        synchronized (System.out) {
+                            System.out.println("\nEmployee disconnected.");
+                        }
                         break;
                     }
 
-                    System.out.println("\nEmployee : " + message);
-                    System.out.print("HR       : ");
+                    synchronized (System.out) {
+                        // Clear the current line prompt and output the incoming message
+                        System.out.print("\r\33[2K");
+                        System.out.println("Employee : " + message);
+                        System.out.print("HR       : ");
+                    }
                 }
-
             } catch (IOException e) {
-                System.out.println("\nEmployee disconnected.");
+                synchronized (System.out) {
+                    System.out.println("\nEmployee disconnected.");
+                }
             }
         });
 
         // Send messages to Employee
         Thread sendThread = new Thread(() -> {
-
             try {
                 String message;
-
                 while (true) {
-
-                    System.out.print("HR       : ");
+                    synchronized (System.out) {
+                        System.out.print("HR       : ");
+                    }
+                    
                     message = keyboard.readLine();
 
-                    if (message == null) {
+                    if (message == null || message.equalsIgnoreCase("exit")) {
+                        if (message != null) {
+                            output.println(message);
+                        }
                         break;
                     }
 
                     output.println(message);
-
-                    if (message.equalsIgnoreCase("exit")) {
-                        break;
-                    }
                 }
-
             } catch (IOException e) {
-                System.out.println("\nError sending message.");
+                synchronized (System.out) {
+                    System.out.println("\nError sending message.");
+                }
             }
         });
 

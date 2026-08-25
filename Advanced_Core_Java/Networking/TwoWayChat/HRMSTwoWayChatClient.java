@@ -9,7 +9,7 @@ public class HRMSTwoWayChatClient {
 
     public static void main(String[] args) throws Exception {
 
-        Socket socket = new Socket("192.168.1.4", 5000); //Yuvaraj's Ip Address
+        Socket socket = new Socket("localhost", 5000); //Yuvaraj's Ip Address
 
         System.out.println("==============================");
         System.out.println("        HRMS CHAT CLIENT");

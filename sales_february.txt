@@ -1,0 +1,5 @@
+Laptop,80000
+Mouse,1800
+Keyboard,2800
+Monitor,20000
+Printer,15000
