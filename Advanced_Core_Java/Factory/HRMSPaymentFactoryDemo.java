@@ -6,19 +6,19 @@ interface PaymentF {
 
 class SalaryPayment implements PaymentF {
     public void processPayment(double amount) {
-        System.out.println("Salary paid: ₹" + amount);
+        System.out.println("Salary paid: Rs." + amount);
     }
 }
 
 class BonusPayment implements PaymentF {
     public void processPayment(double amount) {
-        System.out.println("Bonus paid: ₹" + amount);
+        System.out.println("Bonus paid: Rs." + amount);
     }
 }
 
 class ReimbursementPayment implements PaymentF {
     public void processPayment(double amount) {
-        System.out.println("Reimbursement paid: ₹" + amount);
+        System.out.println("Reimbursement paid: Rs." + amount);
     }
 }
 
