@@ -1,4 +1,4 @@
-package Factory;
+package Builder;
 
 class EmployeeBuilderDemo
 {
