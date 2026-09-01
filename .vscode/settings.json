@@ -1,3 +1,14 @@
 {
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        ".",
+        "Advanced_Core_Java",
+        "Advanced_Core_Java\\DesignPattern",
+        "Advanced_Core_Java\\Executor",
+        "Advanced_Core_Java\\Reflection",
+        "Advanced_Core_Java\\Thread"
+    ],
+    "java.project.referencedLibraries": [
+        "c:\\Program Files\\Apache Software Foundation\\Tomcat 10.1_Tomcat10.1.59\\lib\\servlet-api.jar"
+    ]
 }
