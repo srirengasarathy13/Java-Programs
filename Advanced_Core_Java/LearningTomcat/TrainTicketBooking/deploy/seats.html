@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Select Seat</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .seat {
+            display: inline-block;
+            margin: 8px;
+        }
+
+        .seat input {
+            margin-right: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            background: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Select Your Seat</h2>
+
+    <form action="seat" method="post">
+
+        <div class="seat">
+            <input type="radio" name="seat" value="A1" required>
+            A1
+        </div>
+
+        <div class="seat">
+            <input type="radio" name="seat" value="A2">
+            A2
+        </div>
+
+        <div class="seat">
+            <input type="radio" name="seat" value="A3">
+            A3
+        </div>
+
+        <div class="seat">
+            <input type="radio" name="seat" value="A4">
+            A4
+        </div>
+
+        <br>
+
+        <div class="seat">
+            <input type="radio" name="seat" value="B1">
+            B1
+        </div>
+
+        <div class="seat">
+            <input type="radio" name="seat" value="B2">
+            B2
+        </div>
+
+        <div class="seat">
+            <input type="radio" name="seat" value="B3">
+            B3
+        </div>
+
+        <div class="seat">
+            <input type="radio" name="seat" value="B4">
+            B4
+        </div>
+
+        <button type="submit">
+            Proceed to Pay
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Select Train</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .train {
+            border: 1px solid #ddd;
+            padding: 18px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Select Train</h2>
+
+    <form action="train" method="post">
+
+        <div class="train">
+            <b>Chennai Express</b>
+            <p>Chennai → Bangalore</p>
+            <p>Departure: 06:00 AM</p>
+
+            <input type="radio"
+                   name="train"
+                   value="Chennai Express"
+                   required>
+
+            Select
+        </div>
+
+
+        <div class="train">
+            <b>Cauvery Express</b>
+            <p>Chennai → Mysore</p>
+            <p>Departure: 07:30 AM</p>
+
+            <input type="radio"
+                   name="train"
+                   value="Cauvery Express">
+
+            Select
+        </div>
+
+
+        <div class="train">
+            <b>Brindavan Express</b>
+            <p>Chennai → Bangalore</p>
+            <p>Departure: 08:00 AM</p>
+
+            <input type="radio"
+                   name="train"
+                   value="Brindavan Express">
+
+            Select
+        </div>
+
+
+        <br>
+
+        <button type="submit">
+            Proceed to Seat Selection
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>QR Payment</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .payment-box {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        img {
+            width: 230px;
+            height: 230px;
+            margin: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="payment-box">
+
+    <h2>Dummy Payment</h2>
+
+    <p>Scan the QR Code to make payment</p>
+
+    <img src="qr.png" alt="Payment QR Code">
+
+    <h3>Amount: ₹450</h3>
+
+    <form action="payment" method="post">
+
+        <button type="submit">
+            Payment Done
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
