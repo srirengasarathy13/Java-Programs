@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Saved Preferences</title>
+</head>
+
+<body>
+
+    <h2>Saved Employee Preferences</h2>
+
+    <p>
+        <b>Language:</b>
+        <span id="language"></span>
+    </p>
+
+    <p>
+        <b>Theme:</b>
+        <span id="theme"></span>
+    </p>
+
+    <p>
+        <b>Preferred Location:</b>
+        <span id="location"></span>
+    </p>
+
+    <a href="employeePreference.html">
+        Change Preferences
+    </a>
+
+    <br><br>
+
+    <a href="logout">
+        Logout
+    </a>
+
+    <script>
+
+        fetch("viewPreference")
+            .then(response => response.json())
+            .then(data => {
+
+                document.getElementById("language").textContent =
+                    data.language;
+
+                document.getElementById("theme").textContent =
+                    data.theme;
+
+                document.getElementById("location").textContent =
+                    data.location;
+
+            });
+
+    </script>
+
+</body>
+
+</html>

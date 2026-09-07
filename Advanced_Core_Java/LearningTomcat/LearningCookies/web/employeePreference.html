@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Preference</title>
+</head>
+<body>
+    <h2>Employee Preference</h2>
+    <form action = "savePreference" method = "post">
+        Language:
+        <select name = "language">
+            <option value = "English">English</option>
+            <option value = "Japanese">Japanese</option>
+        </select>
+        <br><br>
+        Theme:
+        <select name = "theme">
+            <option value = "Light">Light</option>
+            <option value = "Dark">Dark</option>
+        </select>
+        <br><br>
+        Preferred Location:
+        <select name = "location">
+            <option value = "Chennai">Chennai</option>
+            <option value = "Madurai">Madurai</option>
+            <option value= "Bangalore">Bangalore</option>
+        </select>
+       <br><br>
+       <input type = "submit" value = "Save Preference">
+    </form>
+    <br>
+    <a href = "viewPreference">View Saved Preferences</a>
+</body>
+</html>
