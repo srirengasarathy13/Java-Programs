@@ -1,6 +1,8 @@
+```java
 package com.example;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -27,15 +29,45 @@ public class LoginServlet extends HttpServlet {
         if ("sri".equals(userId) && "1234".equals(password)) {
 
             /*
-             * Create session
+             * =========================
+             * 1. CREATE HTTP SESSION
+             * =========================
              */
             HttpSession session = request.getSession();
 
             session.setAttribute("userId", userId);
             session.setAttribute("loggedIn", true);
 
+
             /*
-             * Redirect to train selection
+             * =========================
+             * 2. CREATE COOKIE
+             * =========================
+             */
+            Cookie userCookie = new Cookie("userId", userId);
+
+            /*
+             * Cookie will be available
+             * for 1 hour
+             */
+            userCookie.setMaxAge(60 * 60);
+
+            /*
+             * Cookie is available
+             * throughout this application
+             */
+            userCookie.setPath(request.getContextPath());
+
+            /*
+             * Send cookie to browser
+             */
+            response.addCookie(userCookie);
+
+
+            /*
+             * =========================
+             * 3. REDIRECT
+             * =========================
              */
             response.sendRedirect("employeePreference.html");
 
@@ -44,7 +76,10 @@ public class LoginServlet extends HttpServlet {
             PrintWriter out = response.getWriter();
 
             out.println("<html>");
-            out.println("<head><title>Login Failed</title></head>");
+            out.println("<head>");
+            out.println("<title>Login Failed</title>");
+            out.println("</head>");
+
             out.println("<body>");
 
             out.println("<h2>Invalid User ID or Password</h2>");
@@ -58,3 +93,4 @@ public class LoginServlet extends HttpServlet {
         }
     }
 }
+```

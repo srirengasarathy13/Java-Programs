@@ -1,6 +1,8 @@
+
 package com.example;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,28 +17,80 @@ public class SeatServlet extends HttpServlet {
                            HttpServletResponse response)
             throws ServletException, IOException {
 
+        /*
+         * =========================
+         * 1. GET EXISTING SESSION
+         * =========================
+         */
         HttpSession session = request.getSession(false);
 
         /*
-         * Session check
+         * Check login session
          */
         if (session == null ||
-            session.getAttribute("loggedIn") == null) {
+            !Boolean.TRUE.equals(session.getAttribute("loggedIn"))) {
 
             response.sendRedirect("login.html");
             return;
         }
 
-        String seat = request.getParameter("seat");
 
         /*
-         * Store seat
+         * =========================
+         * 2. READ USER ID FROM COOKIE
+         * =========================
+         */
+        String userId = null;
+
+        Cookie[] cookies = request.getCookies();
+
+        if (cookies != null) {
+
+            for (Cookie cookie : cookies) {
+
+                if ("userId".equals(cookie.getName())) {
+
+                    userId = cookie.getValue();
+                    break;
+                }
+            }
+        }
+
+
+        /*
+         * =========================
+         * 3. GET SELECTED SEAT
+         * =========================
+         */
+        String seat = request.getParameter("seat");
+
+
+        /*
+         * =========================
+         * 4. STORE SEAT IN SESSION
+         * =========================
          */
         session.setAttribute("seat", seat);
 
+
         /*
-         * Go to payment
+         * =========================
+         * 5. STORE COOKIE USER ID
+         * IN SESSION
+         * =========================
+         */
+        if (userId != null) {
+
+            session.setAttribute("userId", userId);
+        }
+
+
+        /*
+         * =========================
+         * 6. GO TO PAYMENT
+         * =========================
          */
         response.sendRedirect("payment");
     }
 }
+

@@ -1,6 +1,8 @@
+
 package com.example;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,20 +17,62 @@ public class LogoutServlet extends HttpServlet {
                           HttpServletResponse response)
             throws ServletException, IOException {
 
-        HttpSession session =
-                request.getSession(false);
+        /*
+         * =========================
+         * 1. DESTROY SESSION
+         * =========================
+         */
+        HttpSession session = request.getSession(false);
 
         if (session != null) {
 
-            /*
-             * Destroy session
-             */
             session.invalidate();
         }
 
+
         /*
-         * Return to login page
+         * =========================
+         * 2. REMOVE USER ID COOKIE
+         * =========================
+         */
+        Cookie[] cookies = request.getCookies();
+
+        if (cookies != null) {
+
+            for (Cookie cookie : cookies) {
+
+                if ("userId".equals(cookie.getName())) {
+
+                    /*
+                     * Set cookie age to 0
+                     * to delete it
+                     */
+                    cookie.setMaxAge(0);
+
+                    /*
+                     * Must use the same path
+                     * used when creating the cookie
+                     */
+                    cookie.setPath(request.getContextPath());
+
+                    /*
+                     * Send modified cookie
+                     * to browser
+                     */
+                    response.addCookie(cookie);
+
+                    break;
+                }
+            }
+        }
+
+
+        /*
+         * =========================
+         * 3. RETURN TO LOGIN PAGE
+         * =========================
          */
         response.sendRedirect("login.html");
     }
 }
+
