@@ -13,7 +13,7 @@ public class HRMSEmployeeController {
         this.service = service;
     }
 
-    @GetMapping("/employee")
+    @GetMapping("/emp")
     public String employee(Model model) {
 
         Employee employee = service.getEmployeeInformation();
