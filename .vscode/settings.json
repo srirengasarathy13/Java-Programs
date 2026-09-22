@@ -10,5 +10,6 @@
     ],
     "java.project.referencedLibraries": [
         "c:\\Program Files\\Apache Software Foundation\\Tomcat 10.1_Tomcat10.1.59\\lib\\servlet-api.jar"
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }
