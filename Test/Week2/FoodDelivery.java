@@ -1,4 +1,4 @@
-package Tests.Week2;
+package Test.Week2;
 
 import java.util.*;
 import java.util.concurrent.Callable;

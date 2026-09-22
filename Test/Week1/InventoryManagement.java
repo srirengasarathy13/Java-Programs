@@ -1,6 +1,6 @@
-package Tests.Week1;
+package Test.Week1;
 
-import Tests.Week1.Product.ReserveProduct;
+import Test.Week1.Product.ReserveProduct;
 
 class Product{
     private int productId;
