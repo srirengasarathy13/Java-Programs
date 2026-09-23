@@ -2,6 +2,8 @@ package com.rest_api;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
@@ -23,6 +25,11 @@ public class DepartmentRestAPIController {
     @GetMapping("/{departmentId}")
     public Department getDepartmentByParameter(@PathVariable String departmentId) {
         return departmentRestAPIService.getDepartmentById(departmentId);
+    }
+
+    @PostMapping
+    public Department creatEmployee(@RequestBody Department department) {
+      return departmentRestAPIService.createDepartment(department);
     }
     
 }

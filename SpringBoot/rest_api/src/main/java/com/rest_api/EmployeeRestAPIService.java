@@ -24,4 +24,9 @@ public class EmployeeRestAPIService {
         }
         return null;
     }
+
+    public Employee createEmployee(Employee employee){
+        employees.add(employee);
+        return employee;
+    }
 }

@@ -24,4 +24,9 @@ public class DepartmentRestAPIService {
         }
         return null;
     }
+
+       public Department createDepartment(Department department){
+        departments.add(department);
+        return department;
+    }
 }
