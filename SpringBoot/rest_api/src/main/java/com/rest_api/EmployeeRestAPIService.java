@@ -29,4 +29,17 @@ public class EmployeeRestAPIService {
         employees.add(employee);
         return employee;
     }
+
+    public Employee updateEmployee(String employeeId, Employee updatedUmployee){
+        for(int i=0; i<employees.size();i++){
+            Employee employee = employees.get(i);
+                if(employee.getEmployeeId().equals(employeeId)){
+                    employees.set(i, updatedUmployee);
+                    return updatedUmployee;
+                }
+          
+        }
+        System.out.println("Employee Id : "+employeeId+" not found !");
+          return null;
+    }
 }

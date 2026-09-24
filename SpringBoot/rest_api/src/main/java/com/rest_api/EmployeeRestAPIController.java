@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 
 
@@ -33,5 +35,8 @@ public class EmployeeRestAPIController {
       return employeeRestAPIService.createEmployee(employee);
     }
     
-    
+    @PutMapping("/{employeeId}")
+    public Employee updatEmployee(@PathVariable String employeeId, @RequestBody Employee updatedEmployee){
+        return employeeRestAPIService.updateEmployee(employeeId,updatedEmployee);
+    }
 }
