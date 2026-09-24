@@ -29,4 +29,16 @@ public class DepartmentRestAPIService {
         departments.add(department);
         return department;
     }
+
+    public Department updateDepartment(String departmentId, Department updatedDepartment){
+        for(int i=0; i<departments.size(); i++){
+            Department department = departments.get(i);
+            if(department.getDepartmentId().equals(departmentId)){
+                departments.set(i,updatedDepartment);
+                return updatedDepartment;
+            }
+        }
+        System.out.println("Department Id :"+departmentId+" not found !");
+        return null;
+    }
 }

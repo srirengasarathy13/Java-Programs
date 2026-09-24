@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 
 @RestController 
@@ -32,4 +34,8 @@ public class DepartmentRestAPIController {
       return departmentRestAPIService.createDepartment(department);
     }
     
+    @PutMapping("/{departmentId}")
+    public Department updateDepartment(@PathVariable String departmentId, @RequestBody Department updatedDepartment){
+     return departmentRestAPIService.updateDepartment(departmentId, updatedDepartment);
+    }
 }
