@@ -41,4 +41,9 @@ public class DepartmentRestAPIService {
         System.out.println("Department Id :"+departmentId+" not found !");
         return null;
     }
+
+    public boolean deleteDepartment(String departmentId){
+        return departments.removeIf(department -> department.getDepartmentId().equals(departmentId));
+}
+
 }

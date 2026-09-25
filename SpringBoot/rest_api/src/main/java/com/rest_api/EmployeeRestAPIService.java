@@ -42,4 +42,9 @@ public class EmployeeRestAPIService {
         System.out.println("Employee Id : "+employeeId+" not found !");
           return null;
     }
+
+    public boolean deleteEmployee(String employeeId){
+        return employees.removeIf(employee -> employee.getEmployeeId().equals(employeeId));
+}
+
 }

@@ -1,5 +1,6 @@
 package com.rest_api;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,5 +39,14 @@ public class EmployeeRestAPIController {
     @PutMapping("/{employeeId}")
     public Employee updatEmployee(@PathVariable String employeeId, @RequestBody Employee updatedEmployee){
         return employeeRestAPIService.updateEmployee(employeeId,updatedEmployee);
+    }
+
+    @DeleteMapping("/{employeeId}")
+    public String deleteEmployee(@PathVariable String employeeId){
+        boolean deleted = employeeRestAPIService.deleteEmployee(employeeId);
+        if(deleted){
+            return "Employee "+employeeId+" deleted successfully!";
+        }
+        return "Employee "+employeeId+" not found!";
     }
 }

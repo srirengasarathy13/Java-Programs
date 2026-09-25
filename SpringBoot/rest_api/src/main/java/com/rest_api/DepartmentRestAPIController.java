@@ -1,5 +1,6 @@
 package com.rest_api;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,5 +38,14 @@ public class DepartmentRestAPIController {
     @PutMapping("/{departmentId}")
     public Department updateDepartment(@PathVariable String departmentId, @RequestBody Department updatedDepartment){
      return departmentRestAPIService.updateDepartment(departmentId, updatedDepartment);
+    }
+
+    @DeleteMapping("/{departmentId}")
+    public String deleteDepartment(@PathVariable String departmentId){
+        boolean deleted = departmentRestAPIService.deleteDepartment(departmentId);
+        if(deleted){
+            return "Department "+departmentId+" deleted successfully!";
+        }
+        return "Department "+departmentId+" not found!";
     }
 }
