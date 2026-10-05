@@ -19,6 +19,20 @@ public class DepartmentService {
     {
         return departmentRepository.save(department);
     }
+    public Department updateDepartment(String departmentId, Department updatedDepartment){
+        if(!departmentRepository.existsById(departmentId)){
+            return null;
+        }
+        updatedDepartment.setDepartmentId(departmentId);
+        return departmentRepository.save(updatedDepartment);
+    }
+    public boolean deleteDepartment(String departmentId){
+        if(!departmentRepository.existsById(departmentId)){
+            return false;
+        }
+        departmentRepository.deleteById(departmentId);
+        return true;
+    }
 }
 
 

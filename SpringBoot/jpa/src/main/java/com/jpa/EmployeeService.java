@@ -19,6 +19,20 @@ public class EmployeeService {
     {
         return employeeRepository.save(employee);
     }
+    public Employee updateEmployee(String employeeId, Employee updatedEmployee){
+        if(!employeeRepository.existsById(employeeId)){
+            return null;
+        }
+        updatedEmployee.setEmployeeId(employeeId);
+        return employeeRepository.save(updatedEmployee);
+    }
+    public boolean deleteEmployee(String employeeId){
+        if(!employeeRepository.existsById(employeeId)){
+            return false;
+        }
+        employeeRepository.deleteById(employeeId);
+        return true;
+    }
 }
 
 
