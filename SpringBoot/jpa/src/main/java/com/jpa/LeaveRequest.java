@@ -1,24 +1,22 @@
 package com.jpa;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class LeaveRequest {
 
     @NotBlank
+    @Pattern(regexp = "EMP[0-9]{4}", message = "Employee ID must be in format EMP followed by 4 digits")
     private String employeeId;
 
     @NotBlank
     private String leaveType;
 
-    @Min(1)
-    @Max(30)
+    @Min(value = 1, message = "Leave days must be at least 1")
+    @Max(value = 30, message = "Leave days cannot exceed 30")
     private int leaveDays;
 
     @NotBlank
-    @Size(min = 5, max = 200)
+    @Size(min = 5, max = 200, message = "Reason must contain 5 to 200 characters")
     private String reason;
 
     public LeaveRequest() {
@@ -43,7 +41,8 @@ public class LeaveRequest {
     public int getLeaveDays() {
         return leaveDays;
     }
-        public void setLeaveDays(int leaveDays) {
+
+    public void setLeaveDays(int leaveDays) {
         this.leaveDays = leaveDays;
     }
 
@@ -54,5 +53,4 @@ public class LeaveRequest {
     public void setReason(String reason) {
         this.reason = reason;
     }
-
 }
