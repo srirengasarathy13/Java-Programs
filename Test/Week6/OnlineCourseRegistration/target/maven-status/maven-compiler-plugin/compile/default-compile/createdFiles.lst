@@ -1,0 +1,8 @@
+com\course\model\Registration.class
+com\course\model\Student.class
+com\course\controller\RegisterServlet.class
+com\course\model\Course.class
+com\course\controller\ResultServlet.class
+com\course\controller\LoginServlet.class
+com\course\model\CourseCatalog.class
+com\course\controller\LogoutServlet.class

@@ -1,5 +1,4 @@
 package com.jpa;
-
 import com.jpa.LeaveRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import jakarta.validation.Valid;
@@ -7,18 +6,21 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/leaves")
-public class LeaveController 
+public class LeaveController
 {
     private final LeaveService leaveService;
-
-    public LeaveController(LeaveService leaveService) 
+    public LeaveController(LeaveService leaveService)
     {
         this.leaveService = leaveService;
     }
-
     @PostMapping("/apply")
-    public String applyLeave(@Valid @RequestBody LeaveRequest request) 
+    public String applyLeave(@Valid @RequestBody LeaveRequest request)
     {
         return leaveService.applyLeave(request);
+    }
+    @GetMapping("/{leaveId}")
+    public LeaveRequest getLeaveById(@PathVariable String leaveId)
+    {
+        return leaveService.getLeaveById(leaveId);
     }
 }
