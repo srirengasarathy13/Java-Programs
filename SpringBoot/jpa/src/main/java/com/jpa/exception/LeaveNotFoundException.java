@@ -1,5 +1,4 @@
 package com.jpa.exception;
-
 public class LeaveNotFoundException extends RuntimeException
 {
     public LeaveNotFoundException(String message)
